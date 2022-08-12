@@ -40,9 +40,9 @@ class ArticleC{
 			$sql="UPDATE article  SET description= :description,titre= :titre WHERE id= :id";
 			$db = config::getConnexion();
 			$req=$db->prepare($sql);
-			$req->bindValue(':description', $user->getDescription());
+			$req->bindValue(':description', $article->getDescription());
 			$req->bindValue(':id', $id);
-			$req->bindValue(':titre', $user->getTitre());
+			$req->bindValue(':titre', $article->getTitre());
 			
 			$req->execute();
 		//	echo $query->rowCount() . " records UPDATED successfully <br>";
@@ -68,10 +68,8 @@ class ArticleC{
         }
     }
 
-
-
     function afficherArticle(){
-        $sql='SELECT * FROM user  ';
+        $sql='SELECT * FROM article  ';
         $db=config::getConnexion();
         
         try{

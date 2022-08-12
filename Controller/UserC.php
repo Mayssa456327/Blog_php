@@ -29,11 +29,6 @@ class UserC{
             echo 'Erreur : '.$e->getMessage();
 
         }
-
-
-
-
-
     }
 
     function modifierUtilisateur($user,$id){
@@ -72,8 +67,6 @@ class UserC{
             echo 'Erreur'. $e->getMessage();
         }
     }
-
-
 
     function afficherUtilisateur(){
         $sql='SELECT * FROM user  ';

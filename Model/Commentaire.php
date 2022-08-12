@@ -4,7 +4,7 @@ class Commentaire {
     private $id;
     private $description;
 
-    function __construct($description,$titre){
+    function __construct($description){
 
         $this->description=$description;
        

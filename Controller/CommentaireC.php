@@ -39,7 +39,7 @@ class CommentaireC{
 			$sql="UPDATE commentaire  SET description= :description WHERE id= :id";
 			$db = config::getConnexion();
 			$req=$db->prepare($sql);
-			$req->bindValue(':description', $user->getDescription());
+			$req->bindValue(':description', $commentaire->getDescription());
 			$req->bindValue(':id', $id);
 		
 			$req->execute();
