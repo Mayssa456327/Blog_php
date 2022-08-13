@@ -5,7 +5,7 @@ class Article {
     private $description;
     private $titre;
 
-    function __construct($description,$titre){
+    function __construct($titre,$description){
 
         $this->description=$description;
         $this->titre=$titre;

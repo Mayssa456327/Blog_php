@@ -8,25 +8,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="frontend/assets/img/ico/favicon.ico">
-    <link rel="apple-touch-icon" sizes="144x144" href="frontend/assets/img/ico/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="frontend/assets/img/ico/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="frontend/assets/img/ico/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" href="frontend/assets/img/ico/apple-touch-icon-57x57.png">
+    <link rel="shortcut icon" href="../frontend/assets/img/ico/favicon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" href="../frontend/assets/img/ico/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../frontend/assets/img/ico/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../frontend/assets/img/ico/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" href="../frontend/assets/img/ico/apple-touch-icon-57x57.png">
 
     <title>The Grill by Distinctive Themes</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="frontend/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="frontend/assets/css/animate.css" rel="stylesheet">
-    <link href="frontend/assets/css/plugins.css" rel="stylesheet">
+    <link href="../frontend/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../frontend/assets/css/animate.css" rel="stylesheet">
+    <link href="../frontend/assets/css/plugins.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="frontend/assets/css/style.css" rel="stylesheet">
+    <link href="../frontend/assets/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="frontend/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="frontend/assets/css/pe-icons.css" rel="stylesheet">
+    <link href="../frontend/assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../frontend/assets/css/pe-icons.css" rel="stylesheet">
 
 </head>
 
@@ -136,11 +136,11 @@
 
     </div>
 
-    <script src="frontend/assets/js/jquery.js"></script>
-    <script src="frontend/assets/js/bootstrap.min.js"></script>
-    <script src="frontend/assets/js/plugins.js"></script>
+    <script src="../frontend/assets/js/jquery.js"></script>
+    <script src="../frontend/assets/js/bootstrap.min.js"></script>
+    <script src="../frontend/assets/js/plugins.js"></script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script src="frontend/assets/js/init.js"></script>
+    <script src="../frontend/assets/js/init.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
