@@ -1,7 +1,7 @@
 <?php
 
-include '../config.php';
-include '../Model/User.php';
+include_once  '../../config.php';
+include_once  '../../Model/User.php';
 
 
 class UserC{ 
@@ -19,9 +19,11 @@ class UserC{
                 'username' =>$user->getUsername(),
                 'password'=>$user->getPassword(),
                 'role'=>'USER',
+                
             ]);
             $username=$user->getUsername();
             $password=$user->getPassword();
+            
            // header("location: welcome.php?username=$username,email=$email");
 
 
@@ -37,13 +39,13 @@ class UserC{
 			$db = config::getConnexion();
 		
 
-			$sql="UPDATE user  SET username= :username,password= :password WHERE id= :id";
+			$sql="UPDATE user  SET username= :username,password= :password,mail= :mail WHERE id= :id";
 			$db = config::getConnexion();
 			$req=$db->prepare($sql);
 			$req->bindValue(':username', $user->getUsername());
 			$req->bindValue(':id', $id);
 			$req->bindValue(':password', $user->getPassword());
-			
+			$req->bindValue(':mail', $user->getMail());
 			$req->execute();
 		//	echo $query->rowCount() . " records UPDATED successfully <br>";
       

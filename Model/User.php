@@ -5,13 +5,13 @@ class User {
     private $username;
     private $password;
     private $role;
-
+ 
     function __construct($username,$password,$role){
 
         $this->username=$username;
         $this->password=$password;
         $this->role=$role;
-
+        
     }
 
     function getRole(){
@@ -34,7 +34,7 @@ class User {
     function setPassword($password){
         $this->password=$password;
     }
-
+    
     function getId(){
         return $this->id;
     }

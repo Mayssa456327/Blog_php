@@ -1,32 +1,32 @@
 <?php
 include '../headerBack.php'; 
-include '../../Model/Article.php';
-include '..\..\Controller\ArticleC.php';
-$articleC=new ArticleC();
+include '../../Model/Commentaire.php';
+include '..\..\Controller\CommentaireC.php';
+$commentaireC=new CommentaireC();
 
 $error = "";
 
 // create adherent
-$article = null;
+$commentaire = null;
 
 if (
    
-    isset($_POST["titre"]) &&		
+    isset($_POST["article"]) &&		
     isset($_POST["description"]) 
     
 ) {
     if (
        
-        !empty($_POST['titre']) &&
+        !empty($_POST['article']) &&
         !empty($_POST["description"]) 
     ) {
         $article = new Article(
 
-            $_POST['titre'],
+            $_POST['article'],
             $_POST['description'], 
         
         );
-        $articleC->ajouterArticle($article);
+        $commentaireC->ajouterCommentaire($commentaire);
        
     }
     else
@@ -36,10 +36,6 @@ if (
 ?>
 
 <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <!-- Row -->
                 <div class="row">
                     <!-- Column -->
                     <div class="col-lg-4 col-xlg-3 col-md-12">
@@ -52,7 +48,7 @@ if (
                             <div class="card-body">
                                 <form class="form-horizontal form-material" method="POST" action="">
                                     <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Titre</label>
+                                        <label class="col-md-12 p-0">Article</label>
                                         <div class="col-md-12 border-bottom p-0">
                                             <input type="text" name="titre"
                                                 class="form-control p-0 border-0"> </div>
@@ -76,5 +72,4 @@ if (
                     </div>
                     <!-- Column -->
                 </div>
-        
             </div>
