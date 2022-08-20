@@ -75,15 +75,12 @@ $listeCommentaire=$commentaireC->afficherCommentaire();
                                 <h3 class="box-title mb-0">Recent Comments</h3>
                             </div>
                             <div class="comment-widgets">
-                            <?php
-			    foreach($listeCommentaire as $commentaire){
-			?>	
                                 <!-- Comment Row -->
                                 <div class="d-flex flex-row comment-row p-3 mt-0">
                                     <div class="p-2"><img src="plugins/images/users/varun.jpg" alt="user" width="50" class="rounded-circle"></div>
                                     <div class="comment-text ps-2 ps-md-3 w-100">
-                                       
-                                        <span class="mb-3 d-block"><?php echo $commentaire['description']; ?> </span>
+                                        <h5 class="font-medium">['article']</h5>
+                                        <span class="mb-3 d-block">['description'] </span>
                                         <div class="comment-footer d-md-flex align-items-center">
                                              <span class="badge bg-primary rounded">Pending</span>
                                              
@@ -91,8 +88,6 @@ $listeCommentaire=$commentaireC->afficherCommentaire();
                                         </div>
                                     </div>
                                 </div>
-                                <?php } ?>
-            <br>
                                 <!-- Comment Row -->
                                
                                 <!-- Comment Row -->

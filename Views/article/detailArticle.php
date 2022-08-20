@@ -56,13 +56,11 @@ $commentaires=$articleC->afficherCommentaireparArticle(1);
                                         <div id="comments-form" class="row wow fadeIn" data-wow-delay="0.2s">
                                             <div class="col-md-12">
                                                 <div class="mt60 mb50 single-section-title">
-                                                    <h3>Leave A Reply</h3>
+                                                    <h3>Ajouter Commentaire</h3>
                                                 </div>
                                                 <div id="message"></div>
                                                 <form method="post" id="commentform" class="comment-form">
                                                     <input type="text" class="form-control col-md-4" name="name" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name." />
-                                                    <input type="text" class="form-control col-md-4" name="email" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address." />
-                                                    <input type="text" class="form-control col-md-4" name="website" placeholder="Your URL *" id="website" required data-validation-required-message="Please enter your web address." />
                                                     <textarea name="comments" class="form-control" id="comments" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
                                                     <a class="btn btn-primary pull-right mt30" href="#">Reply</a>
                                                 </form>
