@@ -1,11 +1,40 @@
 <?php
 include '../headerFront.php'; 
-
+include_once '..\..\Controller\CommentaireC.php';
 include '..\..\Controller\ArticleC.php';
 $articleC=new ArticleC();
 $article=$articleC->recupererArticle(1); 
 
 $commentaires=$articleC->afficherCommentaireparArticle(1); 
+
+$commentaireC=new CommentaireC();
+
+$error = "";
+
+// create adherent
+$commentaire = null;
+
+if (
+   	
+    isset($_POST["description"]) 
+    
+) {
+    if (
+       
+        !empty($_POST["description"]) 
+    ) {
+        $commentaire = new Commentaire(
+
+            $_POST['description'], 
+            1
+        
+        );
+        $commentaireC->ajouterCommentaire($commentaire);
+       
+    }
+    else
+        $error = "Missing information";
+}
 ?>
 
 <section>
@@ -54,53 +83,23 @@ $commentaires=$articleC->afficherCommentaireparArticle(1);
                                        
 
                                         <div id="comments-form" class="row wow fadeIn" data-wow-delay="0.2s">
-                                            <div class="col-md-12">
-                                                <div class="mt60 mb50 single-section-title">
-                                                    <h3>Ajouter Commentaire</h3>
-                                                </div>
-                                                <div id="message"></div>
-                                                <form method="post" id="commentform" class="comment-form">
-                                                    <input type="text" class="form-control col-md-4" name="name" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name." />
-                                                    <textarea name="comments" class="form-control" id="comments" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
-                                                    <a class="btn btn-primary pull-right mt30" href="#">Reply</a>
-                                                </form>
-                                            </div>
+            
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12">
+                                        <p class="mt30"><a href="../commentaire/afficherCommentaireFront.php" class="btn btn-success">Ajouter Commentaire</a></p>
+
                                         </div>
                                     </div>
-                                </div>       
-                                <div class="col-xs-2 post-right-col">
-                                    <div class="text-right" data-easyshare data-easyshare-url="http://www.distinctivethemes.com/">
-                                        <div class="share-button">                                        
-                                            <span data-easyshare-total-count>0</span>
-                                            <button data-easyshare-button="total">
-                                                <span>Total Shares</span>
-                                            </button>
-                                        </div>
-
-                                        <div class="share-button">
-                                            <span data-easyshare-button-count="facebook">0</span>
-                                            <button data-easyshare-button="facebook">
-                                                <span>Share</span>
-                                            </button>                                            
-                                        </div>
-
-                                        <div class="share-button">
-                                            <span data-easyshare-button-count="twitter">0</span>
-                                            <button data-easyshare-button="twitter" data-easyshare-tweet-text="">
-                                                <span>Tweet</span>
-                                            </button>                                        
-                                        </div>
-
-                                        <div class="share-button">                                        
-                                            <span data-easyshare-button-count="google">0</span>
-                                            <button data-easyshare-button="google">
-                                                <span>+1</span>
-                                            </button>
-                                        </div>
-
-                                        <div data-easyshare-loader>Loading...</div>
-                                    </div>
-                                </div>                     
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+        
+            </div>
+                          
+                                             
                             </div>
                         </div>
                     </div>

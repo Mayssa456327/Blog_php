@@ -6,7 +6,8 @@ $articleC=new ArticleC();
 $listeArticle=$articleC->afficherArticleAccepter(); 
 
 
-
+$articleC->ajouterFavories($_GET["user_id"],$_GET["article_id"]);
+    
 ?>
 
 
@@ -21,11 +22,14 @@ $listeArticle=$articleC->afficherArticleAccepter();
                         <h3 class="mb50"><span class="theme-accent-color"><?php echo $article['titre']; ?></span></h3>
                         <p class="lead mb50"><?php echo $article['description']; ?></p>
                         <div class="spacer-180"></div>
-                        <p class="mt30"><a href="detailArticle.php" class="btn btn-primary btn-red page-scroll"> Commentaire</a></p>
-                        <a href="afficherarticleFavs.php?article_id=<?php echo $article['id']; ?> &user_id=1 " class="btn btn-primary btn-red page-scroll " name="favs">
-	    								
-                                        Ajouter au favoris
+                        <p class="mt30"><a href="detailArticle.php" class="btn btn-primary btn-red page-scroll">SEE Rceipe</a></p>
+                        <form class="form-horizontal form-material" method="POST" action="">
+                       
+                        <a type="submit" name="submit"href="afficherarticleFavs.php?article_id=<?php echo $article['id']; ?>&user_id=1&CategorieId=<?php echo $article['id']; ?>" class="heart d-flex justify-content-center align-items-center " name="favs">
+	    								Add to favorite
 	    							</a>
+
+                        </form>
                     
                     </div>
                 </div>

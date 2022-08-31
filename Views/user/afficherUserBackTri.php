@@ -1,9 +1,10 @@
 <?php
 include '../headerBack.php'; 
-include '../../Model/Commentaire.php';
-include '..\..\Controller\CommentaireC.php';
-$commentaireC=new CommentaireC();
-$listeCommentaire=$commentaireC->afficherCommentaire(); 
+
+include '../../Model/User.php';
+include '..\..\Controller\UserC.php';
+$userC=new UserC();
+$listeUser=$userC->afficherUsertri(); 
 
 ?>
 
@@ -12,30 +13,39 @@ $listeCommentaire=$commentaireC->afficherCommentaire();
                     <div class="col-sm-12">
                         <div class="white-box">
                             <div class="table-responsive">
-                                
                                 <table class="table text-nowrap">
                                     <thead>
                                         <tr>
                                             <th class="border-top-0">#id</th>
-                                            <th class="border-top-0">description</th>
-                                           
+                                            <th class="border-top-0">username</th>
+                                            <th class="border-top-0">password</th>
+                                         
+                                            <th class="border-top-0">Role</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
                                     <?php
-			    foreach($listeCommentaire as $commentaire){
+			    foreach($listeUser as $user){
 			?>
                                         <tr>
-                                            <td><?php echo $commentaire['id']; ?></td>
-                                            <td><?php echo $commentaire['description']; ?></td>
-                                            
+                                            <td><?php echo $user['id']; ?></td>
+                                            <td><?php echo $user['username']; ?></td>
+                                            <td><?php echo $user['password']; ?></td>
+                                            <td><?php echo $user['role']; ?></td>
+
+
                                             <td>     
-                                            
+                                            <form method="POST" action="modifierUserBack.php">
+						<input type="submit" name="Modifier" value="Modifier" class="btn btn-primary btn-block text-uppercase sm-1">
+						<input type="hidden" value=<?php echo $user['id']; ?> name="id">
+					</form>
                 </td>
 
                 <td>
-				<a href="supprimerCommentaireBack.php?id=<?php echo $commentaire['id']; ?>"  class="tm-product-delete-link" >
+				<a href="supprimerUserBack.php?id=<?php echo $user[
+        'id'
+    ]; ?>"  class="tm-product-delete-link" >
 				<i class="far fa-trash-alt tm-product-delete-icon"></i>
 			</a>
 			
@@ -53,4 +63,4 @@ $listeCommentaire=$commentaireC->afficherCommentaire();
                 </div>
                 
 </div>
-<?php
+ 

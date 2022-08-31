@@ -1,94 +1,61 @@
 <?php
 include '../headerBack.php'; 
-
 include '../../Model/User.php';
 include '..\..\Controller\UserC.php';
 $userC=new UserC();
-$listeUser=$userC->afficherUser(); 
+$listeUser=$userC->afficherUtilisateur(); 
 
 ?>
 
- 
- <div class="container-fluid m-9">
-                <!-- ============================================================== -->
-                <!-- Start Page Content -->
-                <!-- ============================================================== -->
-                <!-- Row -->
-                <div class="row m-9">
-                    <!-- Column -->
-                    <div class="col-lg-4 col-xlg-3 col-md-12">
-                        <div class="white-box">
-                            <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
-                                <div class="overlay-box">
-                                    <div class="user-content">
-                                        <a href="javascript:void(0)"><img src="plugins/images/users/genu.jpg"
-                                                class="thumb-lg img-circle" alt="img"></a>
-                                        <h4 class="text-white mt-2">User Name</h4>
-                                        <h5 class="text-white mt-2">info@myadmin.com</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Column -->
-                    <!-- Column -->
-                    <div class="col-lg-8 col-xlg-9 col-md-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <form class="form-horizontal form-material">
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Full Name</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="Johnathan Doe"
-                                                class="form-control p-0 border-0"> </div>
-                                    </div>
-                                    
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Phone No</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <input type="text" placeholder="123 456 7890"
-                                                class="form-control p-0 border-0">
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label class="col-md-12 p-0">Message</label>
-                                        <div class="col-md-12 border-bottom p-0">
-                                            <textarea rows="5" class="form-control p-0 border-0"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <label class="col-sm-12">Select Country</label>
 
-                                        <div class="col-sm-12 border-bottom">
-                                            <select class="form-select shadow-none p-0 border-0 form-control-line">
-                                                <option>London</option>
-                                                <option>India</option>
-                                                <option>Usa</option>
-                                                <option>Canada</option>
-                                                <option>Thailand</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-4">
-                                        <div class="col-sm-12">
-                                            <button class="btn btn-success">Update Profile</button>
-                                        </div>
-                                    </div>
-                                </form>
+<div class="row" style="margin-left:20%">
+                    <div class="col-sm-12">
+                        <div class="white-box">
+                            <div class="table-responsive">
+                                <a href="afficherUserBackTri.php">Trier la liste </a>
+                                <table class="table text-nowrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">#id</th>
+                                            <th class="border-top-0">username</th>
+                                            <th class="border-top-0">password</th>
+                                            <th class="border-top-0">Role</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <?php
+			    foreach($listeUser as $user){
+			?>
+                                        <tr>
+                                            <td><?php echo $user['id']; ?></td>
+                                            <td><?php echo $user['username'];?></td>
+                                            <td><?php echo $user['password'];  ?></td>
+                                            <td><?php echo $user['role']; ?></td>
+                                            <td>     
+                                            <form method="POST" action=" modifierUserBack.php">
+						<input type="submit" name="Modifier" value="Modifier" class="btn btn-primary btn-block text-uppercase sm-1">
+						<input type="hidden" value=<?php echo $user['id']; ?> name="id">
+					</form>
+                </td>
+
+                <td>
+				<a href="supprimerUserBack.php?id=<?php echo $user['id']; ?>"  class="tm-product-delete-link" >
+				<i class="far fa-trash-alt tm-product-delete-icon"></i>
+			</a>
+			
+                    
+                    </td>
+                                        </tr>
+
+
+	        <?php } ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <!-- Column -->
                 </div>
-                <!-- Row -->
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
-            </div>
+                
+</div>
+ 

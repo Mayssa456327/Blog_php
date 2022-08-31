@@ -40,9 +40,9 @@ class ArticleC{
 			$sql="UPDATE article  SET description= :description,titre= :titre WHERE id= :id";
 			$db = config::getConnexion();
 			$req=$db->prepare($sql);
-			$req->bindValue(':description', $user->getDescription());
+			$req->bindValue(':description', $article->getDescription());
 			$req->bindValue(':id', $id);
-			$req->bindValue(':titre', $user->getTitre());
+			$req->bindValue(':titre', $article->getTitre());
 			
 			$req->execute();
 		//	echo $query->rowCount() . " records UPDATED successfully <br>";
@@ -84,6 +84,18 @@ class ArticleC{
     }
 
 
+    function afficherArticleAccepter(){
+        $sql='SELECT * FROM article where  accepter = 1  ';
+        $db=config::getConnexion();
+        
+        try{
+            $list=$db->query($sql);
+            return ($list);
+
+        }catch(Exception $e){
+            echo 'Erreur'. $e->getMessage();
+        }
+    }
     
 		function recupererArticle($id){
 			$sql="SELECT * from article where id=$id";
@@ -133,7 +145,64 @@ class ArticleC{
 
 
 
+        function accepterArticle($id){
 
+            try {
+                $db = config::getConnexion();
+            
+    
+                $sql="UPDATE article  SET accepter = 1  WHERE id= ". $id;
+                $db = config::getConnexion();
+                $req=$db->prepare($sql);
+              
+                $req->execute();
+            //	echo $query->rowCount() . " records UPDATED successfully <br>";
+          
+            } catch (PDOException $e) {
+                $e->getMessage();
+            }
+    
+            
+        }
+
+        function ajouterFavories($user_id,$article_id){
+			$db = config::getConnexion();
+            $result = $db->query("SELECT * FROM favs WHERE user_id = '". $user_id."' AND article_id = '". $article_id."'");
+            $res=$result->fetch();
+					  
+            if($res == 0){
+            $sql="INSERT INTO favs(article_id,user_id) 
+            VALUES (:article_id ,:user_id)";
+            
+            $query = $db->prepare($sql);
+            $query->execute([
+                
+                'user_id' => $user_id,
+                'article_id' => $article_id,
+                
+            ]);
+                $message = "L'article a été ajouté a la liste des favoris";
+     echo "<script type='text/javascript'>alert('$message');</script>";
+        }
+
+        else{
+            $sql="DELETE FROM favs WHERE user_id=:user_id and article_id=:article_id";
+					
+					$req=$db->prepare($sql);
+					$req->bindValue(':user_id', $user_id);
+					$req->bindValue(':article_id', $article_id);
+					
+						$req->execute();
+						$message = "L'article a été supprimé de la liste des favoris";
+		 echo "<script type='text/javascript'>alert('$message');</script>";
+					
+
+						   
+        }
+
+
+
+		}
 
 
 

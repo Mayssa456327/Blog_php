@@ -11,18 +11,18 @@ $commentaire = null;
 
 if (
    
-    isset($_POST["article"]) &&		
+   	
     isset($_POST["description"]) 
     
 ) {
     if (
        
-        !empty($_POST['article']) &&
+ 
         !empty($_POST["description"]) 
     ) {
-        $article = new Article(
+        $commentaire = new Commentaire(
 
-            $_POST['article'],
+          
             $_POST['description'], 
         
         );
@@ -34,17 +34,40 @@ if (
 }
 
 ?>
-
-<div id="comments-form" class="row wow fadeIn" data-wow-delay="0.2s">
-     <div class="col-md-12">
-        <div class="mt60 mb50 single-section-title">
-         <h3>Leave A Reply</h3>
-        </div>
-            <div id="message"></div>
-                <form method="post" id="commentform" class="comment-form">
-                 <input type="text" class="form-control col-md-4" name="name" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name." />
-                 <textarea name="comments" class="form-control" id="comments" placeholder="Your Message *" required data-validation-required-message="Please enter a message."></textarea>
-                 <a class="btn btn-primary pull-right mt30" href="#">Reply</a>
-                </form>
-    </div>
+<div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
+                        
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form-horizontal form-material" method="POST" action="">
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Description</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                           <br> <textarea rows="5" class="form-control p-0 border-0" name="description"><?php echo $commentaire['description']; ?></p></textarea>
                                         </div>
+                                    </div>
+            
+                                    <div class="form-group mb-4">
+                                        <div class="col-sm-12">
+                                        <input type="submit" href="afficherCommentaireFront.php"class="btn btn-success" value="Ajouter" ></input>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+        
+            </div>
+                                     

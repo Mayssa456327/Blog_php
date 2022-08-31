@@ -58,14 +58,13 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#about">About Us</a></li>  
-                        <li><a href="#about">Specials</a></li>    
-                        <li><a href="#about">Our Menu</a></li>      
-                        <li><a href="#about">Book a Table</a></li>                 
+                        <li><a href="../article/afficherArticleFront.php">Articles</a></li>     
+                        <li><a href="../user/my-profile.php?username=<?php $_SESSION['username'] ?><?php $_SESSION['password'] ?>"> Profile</a></li>                
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Extras <span class="pe-7s-angle-down"></span></a>
+                            <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Singn <span class="pe-7s-angle-down"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="404.html">404</a></li>
+                                <li><a href="../user/sign-in.php">Singn In</a></li>
+                                <li><a href="404.html">Singn Up</a></li>
                             </ul>
                         </li>
                         <li><a href="#search"><i class="pe-7s-search"></i></a></li>
@@ -87,7 +86,7 @@
         </div>
 
         <!-- Header -->
-        <header id="headerwrap" class="fullheight dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg5.jpg" data-speed="0.8">
+        <header id="headerwrap" class="fullheight dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="../../frontend/assets/img/bg/bg5.jpg" data-speed="0.8">
             <div class="container vertical-center">
                 <div class="intro-text vertical-center text-center smoothie">
                     <h3 class="fancy wow fadeInDown" data-wow-delay="2s"><span>THIS BUN, IS STILL IN THE OVEN</span></h3>
@@ -98,43 +97,6 @@
             </div>
         </header>
 
-        <footer class="white-wrapper">
-            <div class="container-fluid">
-                <div class="row text-center">
-                    <div class="col-md-12 wow fadeIn mb30" data-wow-delay="0.2s">
-                        <span class="copyright">Copyright 2019. Designed by DISTINCTIVE THEMES</span>
-                    </div>
-                    <div class="col-md-12">
-                        <ul class="list-inline social-links wow fadeIn" data-wow-delay="0.2s">
-                            <li>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-behance"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <div id="bottom-frame"></div>
-
-        <a href="#" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
-
-    </div>
 
     <script src="../frontend/assets/js/jquery.js"></script>
     <script src="../frontend/assets/js/bootstrap.min.js"></script>
